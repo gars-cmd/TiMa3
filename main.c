@@ -21,25 +21,28 @@ int main()
    while (i<WORD)
    {
        scanf("%c",&word[i]);
+        //condition to stop the word
        if (word[i] == ' ' || word[i] == '\t' || word[i] == '\n')
-       {
+       {     
+            i++;
+           word[i]='\0';
            break;
        }
-       i++;
+      
+        i++;
    }
-   
+ 
    //get the text
    int j = 0;
    while (j<TXT)
    {
        scanf("%c",&txt[j]);
-       if (txt[j] == ' ' || txt[j] == '\t' || txt[j] == '\n')
-       {
+       //condition to stop the text
+       if (txt[j] == '~' ){
             break;
        }
-      j++;  
+      j++;
    }
-   
    printf("Gematria Sequences: ");
    minimalGematria(txt,word);
    printf("\n");

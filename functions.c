@@ -141,9 +141,10 @@ void reverse(char* mot){
 }
 
 void atbashrunner(char* sequence , char* word){
+
     int sizeW = strlen(word);
     //printf("mot = %s\n",word);
-
+    // printf("%d",sizeW);
     char* atbash_word = calloc(sizeW,sizeof(char)) ;
     strcpy(atbash_word,word);
     atbash(atbash_word);
@@ -157,10 +158,8 @@ void atbashrunner(char* sequence , char* word){
 
 
 
-
     int mark = 0 ;
     int sizeS = strlen(sequence);
-
     for (int i = 0; sequence[i]!='\0'; i++)
     {
         //printf("1");
@@ -179,7 +178,7 @@ void atbashrunner(char* sequence , char* word){
                 {
                     curr[j-i] = sequence[j];
                 }
-                //printf("%s , %s \n",curr , atbash_word);
+                // printf("%s , %s \n",curr , atbash_word);
             
                 if ( (strcmp(curr , atbash_word ) == 0 ) || (strcmp(curr , reverseAtbash) == 0) )
                 {
@@ -283,7 +282,7 @@ void anagramm( char* string , char* word)
 
     // char * copy = calloc(sizeW,sizeof(char));
     // strcpy(copy,word);
-    
+    //printf("1");
 
     
     if (sizeS == 0 || sizeW == 0)
@@ -317,6 +316,7 @@ void anagramm( char* string , char* word)
             }
                 if (j == sizeW)
                 {
+                    
                     //printf("4");
             
                     // get curr word 
@@ -331,6 +331,7 @@ void anagramm( char* string , char* word)
                     
 
                     //check if the word is anagramm
+                    //printf("curr = %s , word = %s",curr_word,word);
                     int ans = compareWord(curr_word,word);
                     if (ans == 1)
                     {
@@ -353,8 +354,9 @@ void anagramm( char* string , char* word)
                     }
                     left++;
                     right++;
-                    
+                free(curr_word);    
                 }
+                
                 else if (j>sizeW)
                 {
                     //printf("6");
