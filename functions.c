@@ -174,7 +174,7 @@ void atbashrunner(char* sequence , char* word){
             {   
                 //printf("2");
 
-                for (int j = i; j < (i + sizeW-1); j++)
+                for (int j = i; j < (i + sizeW); j++)
                 {
                     curr[j-i] = sequence[j];
                 }
@@ -188,7 +188,7 @@ void atbashrunner(char* sequence , char* word){
                     {
                     printf("~");    
                         }
-                        for (int k = i; k < (i+sizeW-1) ; k++)
+                        for (int k = i; k < (i+sizeW) ; k++)
                         {
                             printf("%c",sequence[k]);
                         }
