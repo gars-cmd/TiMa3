@@ -31,6 +31,8 @@ int main()
       
         i++;
    }
+   int sizeW = strlen(word);
+   word[sizeW-1] = '\0';
  
    //get the text
    int j = 0;
@@ -43,6 +45,7 @@ int main()
        }
       j++;
    }
+   
    printf("Gematria Sequences: ");
    minimalGematria(txt,word);
    printf("\n");

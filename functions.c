@@ -275,10 +275,14 @@ int compareWord(char * mot1 , char* mot2){
 void anagramm( char* string , char* word)
 {
     //size sequence 
-    int sizeS = strlen(string);
-
-    //size of the word
     int sizeW = strlen(word);
+    //word = realloc(word,(sizeW-1)*sizeof(char));
+    int sizeS = strlen(string);
+    
+
+    //size of the word 
+    
+    
 
     // char * copy = calloc(sizeW,sizeof(char));
     // strcpy(copy,word);
@@ -328,10 +332,8 @@ void anagramm( char* string , char* word)
                         count_curr++;
                     }
                     //printf("%s\n",curr_word);
-                    
-
                     //check if the word is anagramm
-                    //printf("curr = %s , word = %s",curr_word,word);
+                    //printf("\ncurr = %s , word = %s",curr_word,word);
                     int ans = compareWord(curr_word,word);
                     if (ans == 1)
                     {
@@ -340,6 +342,7 @@ void anagramm( char* string , char* word)
                         {
                             printf("~");
                         }
+                        //printf("\n%s\n",curr_word);
                         for (int  i = left; i <= right; i++)
                         {
                             if (i == right && gematrialettr(string[i]) == 0)
