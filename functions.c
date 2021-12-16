@@ -105,7 +105,11 @@ char atbashlettr( char lettr ){
         int ans = 'z'-gap;
         return (char)ans;
     }
-return '%';
+else
+{
+    return '\0';
+}
+
 }
 
 void atbash(char* mot){
@@ -149,6 +153,7 @@ void atbashrunner(char* sequence , char* word){
     strcpy(reverseAtbash,atbash_word);
     reverse(reverseAtbash);
     //printf("mot = %s\n",reverseAtbash);
+    // printf("%s",sequence);
 
 
 
@@ -168,14 +173,17 @@ void atbashrunner(char* sequence , char* word){
             char* curr = calloc(sizeW,sizeof(char));
             if (strchr(newAtbashWord,sequence[i])!=NULL)
             {   
+                //printf("2");
 
-                for (int j = i; j < (i + sizeW); j++)
+                for (int j = i; j < (i + sizeW-1); j++)
                 {
                     curr[j-i] = sequence[j];
                 }
+                //printf("%s , %s \n",curr , atbash_word);
             
                 if ( (strcmp(curr , atbash_word ) == 0 ) || (strcmp(curr , reverseAtbash) == 0) )
                 {
+                    //printf("1");
 
                     if (mark == 1)
                     {
