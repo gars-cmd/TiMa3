@@ -189,7 +189,7 @@ void atbashrunner(char* sequence , char* word){
                     {
                     printf("~");    
                         }
-                        for (int k = i; k < (i+sizeW) ; k++)
+                        for (int k = i; k < (i+sizeW-1) ; k++)
                         {
                             printf("%c",sequence[k]);
                         }
