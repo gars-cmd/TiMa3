@@ -110,7 +110,7 @@ return '%';
 
 void atbash(char* mot){
     
-    int sizeM = strlen(mot);
+    //int sizeM = strlen(mot);
     // char newM[sizeM];
 
     for (int i = 0; mot[i]!='\0'; i++)
@@ -280,7 +280,7 @@ void anagramm( char* string , char* word)
     
     if (sizeS == 0 || sizeW == 0)
     {
-        printf("");
+        ;
     }else
     {
         //printf("1");
@@ -289,7 +289,7 @@ void anagramm( char* string , char* word)
         // initialize counters for sliding windows 
         int left = 0;
         int right = sizeW-1;
-        int count = sizeW ;
+        //int count = sizeW ;
         int mark = 0;
 
 

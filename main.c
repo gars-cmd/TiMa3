@@ -7,8 +7,6 @@
 #define TXT 1024
 #define WORD 30
 
-const char UP[27]= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const char LOW[27]= "abcdefghijklmnopqrstuvwxyz";
 
 
 int main()

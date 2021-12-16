@@ -12,4 +12,4 @@ stringProg: main function
 	gcc $(FLAG) -o stringProg main.o functions.o
 
 clean:
-	rm -f *.o stringProg
+	rm -f *.o stringProg main
