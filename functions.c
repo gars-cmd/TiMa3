@@ -226,7 +226,7 @@ int compareWord(char * mot1 , char* mot2){
 
     int count[27] = {0};
 
-    if (mot1[0] == ' ' || mot2[0] == ' ')
+    if (strchr(mot2,mot1[0])==NULL)
     {
         return 0;
     }
@@ -300,11 +300,11 @@ void anagramm( char* string , char* word)
             int j = 0;
             for (int i = left; i <= right; i++)
             {
-                if (gematrialettr(string[i]) > 0)
-                {
+                //if (gematrialettr(string[i]) > 0)
+                //{
                     //printf("3");
                     j++;
-                }
+                //}
                 
             }
                 if (j == sizeW)
@@ -312,14 +312,14 @@ void anagramm( char* string , char* word)
                     //printf("4");
             
                     // get curr word 
-                    char * curr_word = calloc(right-left,sizeof(char));
+                    char * curr_word = calloc((right-left)+1,sizeof(char));
                     int count_curr  = 0;
                     for (int i = left; i <= right; i++)
                     {
                         curr_word[count_curr] = string[i];
                         count_curr++;
                     }
-                    
+                    //printf("%s\n",curr_word);
                     
 
                     //check if the word is anagramm
@@ -333,14 +333,14 @@ void anagramm( char* string , char* word)
                         }
                         for (int  i = left; i <= right; i++)
                         {
-                            if (i == right && string[i] == ' ')
+                            if (i == right && gematrialettr(string[i]) == 0)
                             {
                                 break;
                             }
                             printf("%c",string[i]);
-                            
+                            mark=1;
                         }
-                        mark=1;
+                        
                         
                     }
                     left++;
