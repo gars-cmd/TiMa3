@@ -1,11 +1,11 @@
-FLAG = -Wall -g 
+FLAG = -g -Wall 
 
 all: main function stringProg
 
-main: main.c functions.h
+main: main.c 
 	gcc $(FLAG) -c main.c
 	
-function: functions.c functions.h
+function: functions.c 
 	gcc $(FLAG) -c functions.c 
 
 stringProg: main function
