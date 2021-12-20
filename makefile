@@ -1,14 +1,15 @@
 FLAG = -g -Wall 
 
-all: main function stringProg
+all: main.o functions.o stringProg
 
-main: main.c 
+
+main.o: main.c 
 	gcc $(FLAG) -c main.c
-	
-function: functions.c 
+
+functions.o: functions.c 
 	gcc $(FLAG) -c functions.c 
 
-stringProg: main function
+stringProg: main.o functions.o
 	gcc $(FLAG) -o stringProg main.o functions.o
 
 .PHONY: clean all
