@@ -11,5 +11,7 @@ function: functions.c
 stringProg: main function
 	gcc $(FLAG) -o stringProg main.o functions.o
 
+.PHONY: clean all
+	
 clean:
 	rm -f *.o stringProg main
